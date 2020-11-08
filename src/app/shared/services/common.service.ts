@@ -8,11 +8,11 @@ export class CommonService {
 
   constructor(private router: Router) { }
 
-  navigateByUrl = (url): void => {
-    this.router.navigateByUrl(url);
-  }
-
-  createUrlTree = () => {
-
+  navigate = (path, params?): void => {
+    if (params) {
+      this.router.navigate(path, params);
+    } else {
+      this.router.navigate([path]);
+    }
   }
 }

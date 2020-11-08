@@ -19,7 +19,7 @@ export class FilterComponent implements OnInit {
 
   constructor(
     private common: CommonService,
-    private fb: FormBuilder, private router: Router,
+    private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     public translate: TranslateService) { }
 
@@ -31,8 +31,7 @@ export class FilterComponent implements OnInit {
       land_success: []
     });
     this.filterForm.valueChanges.subscribe((value) => {
-      const routeURL = this.router.createUrlTree([], { relativeTo: this.activatedRoute, queryParams: value }).toString();
-      this.common.navigateByUrl(routeURL);
+      this.common.navigate(['.'], { relativeTo: this.activatedRoute, queryParams: value });
     });
     this.activatedRoute.queryParams
       .pipe(
