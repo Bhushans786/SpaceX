@@ -1,9 +1,9 @@
 <form [formGroup]="filterForm" class="filter-container container">
     <label class="font-bold font-20">Filters</label>
-    <div class="options-container">
+    <div class="filter-wrapper">
         <ng-container *ngFor="let val of filterOptions">
             <label class="filter-title">{{val.name | translate}}</label>
-            <div class="options-container1">
+            <div class="filter-options">
                 <ng-container *ngFor="let option of val.options">
                     <input type="radio" [id]="val.name + option.value" [name]="val.name" [formControlName]="val.name"
                         [value]="option.value" [checked]="filterForm.get(val.name).value === option.value">

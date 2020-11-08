@@ -1,35 +1,35 @@
 .filter-container {
-  .options-container {
+  .filter-wrapper {
     margin: 0 5%;
-  }
-  .filter-title {
-    display: block;
-    text-align: center;
-    border-bottom: 2px solid #e6e6e6;
-    margin: 10px 5% 0;
-    padding-bottom: 2px;
-    color: #717171;
-    font-size: 18px;
-  }
-  .options-container1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  input {
-    display: none;
-    + label {
-      background: #c6e1b3;
-      padding: 10px;
-      flex: 0 30%;
-      margin-top: 10px;
+    .filter-title {
+      display: block;
       text-align: center;
-      border-radius: 4px;
-      cursor: pointer;
+      border-bottom: 2px solid #e6e6e6;
+      margin: 10px 5% 0;
+      padding-bottom: 2px;
+      color: #717171;
+      font-size: 18px;
     }
-    &:checked {
-      + label {
-        background: #7cba00;
+    .filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      input {
+        display: none;
+        + label {
+          background: #c6e1b3;
+          padding: 10px;
+          flex: 0 30%;
+          margin-top: 10px;
+          text-align: center;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        &:checked {
+          + label {
+            background: #7cba00;
+          }
+        }
       }
     }
   }
