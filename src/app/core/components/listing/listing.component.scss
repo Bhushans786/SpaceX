@@ -40,10 +40,13 @@
       color: #4a4d99;
     }
     .list-value {
+      max-width: 150px;
+      word-break: break-all;
       color: #4a4d99;
     }
     .list-ul {
       margin: 5px 0;
+      list-style: none;
     }
   }
   .empty-list {

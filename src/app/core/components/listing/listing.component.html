@@ -7,12 +7,14 @@
                         [alt]="item?.mission_name+' image.'" />
                 </div>
                 <div class="list-title font-bold">{{item?.mission_name}} # {{item?.flight_number}}</div>
-                <div class="mb-10">
-                    <label class="font-bold">Mission Ids:</label>
-                    <span class="list-value">{{item?.mission_id.length==0?"N/A":""}}</span>
-                    <ul *ngIf="item?.mission_id.length>0" class="list-value list-ul">
-                        <li *ngFor="let mission of item?.mission_id">{{mission}}</li>
-                    </ul>
+                <div class="mb-10 flex">
+                    <label class="font-bold flex-1">Mission Ids:</label>
+                    <ng-container *ngIf="item?.mission_id.length else emptyMission">
+                        <span class="list-value flex-1" *ngFor="let mission of item?.mission_id">{{mission}}</span>
+                    </ng-container>
+                    <ng-template #emptyMission>
+                        <span class="list-value flex-1">NA</span>
+                    </ng-template>
                 </div>
                 <div class="mb-10 flex">
                     <label class="font-bold flex-1">Launch Year:</label>
