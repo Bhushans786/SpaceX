@@ -39,7 +39,9 @@ export class FilterComponent implements OnInit {
         filter(event => Object.keys(event).length > 0),
         take(1))
       .subscribe((params) => {
+
         this.filterForm.patchValue(params);
+        console.log(params, this.filterForm.value);
       });
   }
 
