@@ -18,8 +18,8 @@ export class LoadImageDirective implements OnChanges {
   }
 
   observeAndLazyLoadImages = (lazyImage: Element): void => {
-    const intersectionObsPresent = 'IntersectionObserver' in window;
-    if (intersectionObsPresent) {
+    const intersectionObs = 'IntersectionObserver' in window;
+    if (intersectionObs) {
       if (this.imageObserver) {
         this.imageObserver.unobserve(lazyImage);
         this.imageObserver = null;
