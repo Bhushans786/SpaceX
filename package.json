@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --buildOptimizer && gzipper compress ./dist && ng run SpaceX:server:production",
+    "build": "ng build --prod --buildOptimizer && ng run SpaceX:server:production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
