@@ -23,7 +23,7 @@ export class ListingComponent implements OnInit {
             .pipe(
               switchMap(params => {
                 return this.api.get(API_URLS.launch_url, {
-                  limit: 100,
+                  limit: 20,
                   ...params
                 });
               })
