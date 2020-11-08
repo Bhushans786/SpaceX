@@ -20,10 +20,12 @@ export class LoadImageDirective implements OnChanges {
   observeAndLazyLoadImages = (lazyImage: Element): void => {
     const intersectionObs = 'IntersectionObserver' in window;
     if (intersectionObs) {
+
       if (this.imageObserver) {
         this.imageObserver.unobserve(lazyImage);
         this.imageObserver = null;
       }
+
       this.imageObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -38,10 +40,10 @@ export class LoadImageDirective implements OnChanges {
       this.setImageSrcFromDataset(lazyImage);
     }
   }
+
   setImageSrcFromDataset = (imageTag): void => {
     imageTag.src = this.source;
     imageTag.parentNode.classList.remove('image-loading');
   }
-
 
 }
