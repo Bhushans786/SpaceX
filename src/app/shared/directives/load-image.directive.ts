@@ -11,8 +11,8 @@ export class LoadImageDirective implements OnChanges {
 
   constructor(private elRef: ElementRef) { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.source) {
+  ngOnChanges(): void {
+    if (this.source) {
       this.observeAndLazyLoadImages(this.elRef.nativeElement);
     }
   }
