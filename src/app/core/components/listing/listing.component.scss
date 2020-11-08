@@ -1,0 +1,53 @@
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 5px;
+  .list-content {
+    margin: 0 5px 10px 5px;
+    @keyframes placeHolderShimmer {
+      0% {
+        background-position: -468px 0;
+      }
+      100% {
+        background-position: 468px 0;
+      }
+    }
+    .image-container {
+      background: #eee;
+      width: 100%;
+      text-align: center;
+      height: 256px;
+      &.image-loading {
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background-image: linear-gradient(to right, #eee 20%, #e1e1e1 40%, #eee 60%, #eee 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 100%;
+      }
+      img {
+        width: 100%;
+        max-width: 256px;
+        height: 256px;
+      }
+    }
+    .list-title {
+      max-width: 200px;
+      word-break: break-all;
+      padding: 12px 0px;
+      color: #4a4d99;
+    }
+    .list-value {
+      color: #4a4d99;
+    }
+    .list-ul {
+      margin: 5px 0;
+    }
+  }
+  .empty-list {
+    text-align: center;
+    width: 100%;
+  }
+}

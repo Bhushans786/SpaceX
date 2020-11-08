@@ -1,0 +1,37 @@
+<div class="list-container">
+    <ng-container *ngIf="list.length else emptyList">
+        <ng-container *ngFor="let item of list">
+            <div class="container list-content">
+                <div class="image-container image-loading">
+                    <img appLoadImage height="256" width="256" [source]="item?.links.mission_patch_small"
+                        [alt]="item?.mission_name+' image.'" />
+                </div>
+                <div class="list-title font-bold">{{item?.mission_name}} # {{item?.flight_number}}</div>
+                <div class="mb-10">
+                    <label class="font-bold">Mission Ids:</label>
+                    <span class="list-value">{{item?.mission_id.length==0?"N/A":""}}</span>
+                    <ul *ngIf="item?.mission_id.length>0" class="list-value list-ul">
+                        <li *ngFor="let mission of item?.mission_id">{{mission}}</li>
+                    </ul>
+                </div>
+                <div class="mb-10 flex">
+                    <label class="font-bold flex-1">Launch Year:</label>
+                    <span class="list-value flex-1">{{item.launch_year}}</span>
+                </div>
+                <div class="mb-10 flex">
+                    <label class="font-bold flex-1">Successful Launch:</label>
+                    <span class="list-value flex-1">{{item.launch_success}}</span>
+                </div>
+                <div class="mb-10 flex">
+                    <label class="font-bold flex-1">Successful Landing:</label>
+                    <span class="list-value flex-1">{{item?.rocket?.first_stage?.cores[0]?.land_success}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+    <ng-template #emptyList>
+        <div class="empty-list font-20 font-bold">
+            No record found
+        </div>
+    </ng-template>
+</div>

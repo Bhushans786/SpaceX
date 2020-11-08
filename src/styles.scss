@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background: #eeeeee;
+  padding: 0 10px;
+  margin: 0 auto;
+  .container {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  .font-bold {
+    font-weight: bold;
+  }
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .mt-10 {
+    margin-top: 10px;
+  }
+  .p-25 {
+    padding: 25px;
+  }
+  .font-20 {
+    font-size: 20px;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  h1 {
+    margin: 0px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  aside {
+    flex: 1;
+  }
+  section {
+    flex: 3;
+  }
+  app-launch-list {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 700px) {
+    main {
+      flex-direction: row;
+    }
+    app-launch-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    app-launch-list-item {
+      flex: 0 48%;
+      margin: 0 5px;
+      .container {
+        height: 88%;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    app-launch-list-item {
+      flex: 0 24%;
+    }
+  }
+}
